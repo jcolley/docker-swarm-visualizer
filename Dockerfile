@@ -6,6 +6,9 @@ WORKDIR /app
 # Only run npm install if these files change.
 ADD ./package.json /app/package.json
 
+# Fix dependencies
+RUN npm audit fix
+
 # Install dependencies
 RUN npm install
 
@@ -26,6 +29,7 @@ ADD ./server.js /app
 ADD ./healthcheck.js /app
 COPY --from=dist /app/dist/* /app/dist/
 COPY --from=dist /app/package.json /app/package.json
+RUN npm audit fix
 RUN npm install
 
 # MS : Number of milliseconds between polling requests. Default is 1000.
