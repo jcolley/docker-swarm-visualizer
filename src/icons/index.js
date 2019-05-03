@@ -27,3 +27,4 @@ export const tomcat = require('./svg/tomcat.svg');
 export const tutum = require('./svg/tutum.svg');
 export const ubuntu = require('./svg/ubuntu.svg');
 export const wikimedia = require('./svg/wikimedia.svg');
+export const vme = require('../images/sedvme-docker-dashboard.png')
